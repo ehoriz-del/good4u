@@ -14,7 +14,17 @@
       "mainCounts": {"18":17,"40":17,"42":16,"49":17,"56":15}, "specialCounts": {"12":13},
       "sources": [{"label":"Texas Lottery frequency chart","url":"https://www.texaslottery.com/export/sites/lottery/Games/Mega_Millions/Number_Frequency.html"}]
     },
-    "korea:Lotto 6/45": {"status":"unavailable"},
+    "korea:Lotto 6/45": {
+      "status": "ok",
+      "updated": "2026년 8월 22일",
+      "period": "Official cumulative statistics: draws 1–1,238; bonus numbers excluded",
+      "localizedPeriod": {
+        "ko": "동행복권 공식 누적 통계 · 제1회–제1,238회 · 보너스 번호 제외"
+      },
+      "main": [12, 13, 18, 27, 34, 45],
+      "mainCounts": {"12":180,"13":180,"18":178,"27":181,"34":186,"45":175},
+      "sources": [{"label":"동행복권 공식 통계","url":"https://www.dhlottery.co.kr/lt645/stats"}]
+    },
     "china:Super Lotto": {"status":"unavailable"},
     "europe:EuroMillions": {
       "status":"ok", "updated":"August 22, 2026", "period":"Current 5/50 + 2/12 format; current-format frequency table",
