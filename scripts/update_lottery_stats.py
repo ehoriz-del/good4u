@@ -122,12 +122,20 @@ def main() -> int:
             failures.append(f"{key}: {exc}")
             print(f"preserved {key}: {exc}")
 
-    payload["generatedAt"] = datetime.now(timezone.utc).isoformat()
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"updated {changed}/{len(SOURCES)} configured games")
     if failures:
         print("Source review needed:\n- " + "\n- ".join(failures))
-    return 0 if changed else 1
+
+    # A blocked or temporarily unavailable source must not fail the entire
+    # scheduled workflow. Keep the last verified JSON untouched when nothing
+    # could be refreshed; otherwise save only the successfully refreshed games.
+    if changed:
+        payload["generatedAt"] = datetime.now(timezone.utc).isoformat()
+        OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    else:
+        print("No sources were refreshed; lottery-stats.json remains unchanged.")
+
+    return 0
 
 
 if __name__ == "__main__":
