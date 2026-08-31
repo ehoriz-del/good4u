@@ -4,24 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Good4U — Lucky Number Generator</title>
+<title>Good Fortune — Lucky Number Generator</title>
 <meta name="description" content="Generate lucky numbers for popular lotteries around the world.">
 
 <link rel="icon" href="favicon.ico">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-46N0PNNWM3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1YLS7TZ2J5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-46N0PNNWM3');
-</script> 
+  gtag('config', 'G-XMVYVT0RFS');
+</script>  
 
 <link rel="icon" href="favicon.ico">
 <style>
 /* =========================================================
-   GOOD4U
+   GOOD FORTUNE
    Modern one-page lottery number generator
    ========================================================= */
 
@@ -795,7 +795,7 @@ footer{
 <header>
 
     <a href="#" class="logo">
-        GOOD 4U<span class="logo-dot">.</span>
+        GOOD FORTUNE<span class="logo-dot">.</span>
     </a>
 
     <div class="header-note">
@@ -818,7 +818,7 @@ footer{
     <div>
         <h1 class="hero-title">
             <span>GOOD</span>
-            <span class="fortune">4U</span>
+            <span class="fortune">FORTUNE</span>
         </h1>
     </div>
 
@@ -1052,7 +1052,7 @@ footer{
 <section class="statement">
 
     <div class="statement-small">
-        Good4U
+        Good Fortune
     </div>
 
     <h2>
@@ -1071,13 +1071,13 @@ footer{
 <section class="info">
 
     <div class="info-title">
-        About Good4U
+        About Good Fortune
     </div>
 
     <div class="info-text">
 
         <p>
-            Good4U is a simple global lucky-number generator
+            Good Fortune is a simple global lucky-number generator
             inspired by some of the world's best-known lottery games.
         </p>
 
@@ -1087,7 +1087,7 @@ footer{
         </p>
 
         <p>
-            Good4U does not sell lottery tickets and does not
+            Good Fortune does not sell lottery tickets and does not
             provide winning-number predictions. Every combination has
             the same chance of being drawn.
         </p>
@@ -1116,11 +1116,11 @@ footer{
 <footer>
 
     <div>
-        © Good4U
+        © 2026 Good Fortune
     </div>
 
     <div class="footer-right">
-        info@good4u.com
+        contact@goodfortune.com
     </div>
 
 </footer>
@@ -2049,6 +2049,19 @@ async function generateNumbers(){
 
             balls.forEach(
                 (ball,index)=>{
+
+
+                    /*
+                       A ball that has already stopped contains
+                       its final number. Do not let the animation
+                       interval overwrite that number again.
+                    */
+
+                    if(
+                        !ball.classList.contains(
+                            "spinning"
+                        )
+                    ) return;
 
 
                     const value =
