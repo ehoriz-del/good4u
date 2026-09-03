@@ -2094,6 +2094,14 @@ async function generateNumbers(){
             balls.forEach(
                 (ball,index)=>{
 
+                    /*
+                       Once a ball has stopped spinning, its final
+                       number must never be overwritten by the
+                       animation timer.
+                    */
+                    if(!ball.classList.contains("spinning")){
+                        return;
+                    }
 
                     const value =
                         ball.querySelector(
